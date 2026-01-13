@@ -1,6 +1,6 @@
 library(parallel)
 
-# Compute marginal KDEs
+# Marginal KDEs
 compute_marginals <- function(X, parallel = TRUE, n_cores = NULL) {
   p <- ncol(X)
   n <- nrow(X)
@@ -80,7 +80,6 @@ compute_pairwise_mi <- function(X, parallel = TRUE, n_cores = NULL) {
     return(list(i = i, j = j, mi = mi_val))
   }
   
-  # Compute in parallel or sequential
   if (parallel) {
     if (is.null(n_cores)) {
       n_cores <- detectCores() - 1

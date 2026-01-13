@@ -46,9 +46,8 @@ process_dataset <- function(sim_id) {
                            randinit = NULL,
                            verbose = FALSE,
                            sparsity = sparsity_val,
-                           mRMR = FALSE,
-                           mi_matrix = NULL,
-                           n_cores = 1) 
+                           init_weights = "uniform",
+                           n_cores = NULL) 
     
     ari <- ARI(res_temp$best_clust$Cluster, labels)
     ami <- AMI(res_temp$best_clust$Cluster, labels)

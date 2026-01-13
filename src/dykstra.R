@@ -27,7 +27,7 @@ projection_nonnegative_l2_ball <- function(x) {
 dykstra_projection <- function(y, s, max_iter = 1000, tol = 1e-8) {
   n <- length(y)
   x <- y
-  # L1 and L2 projection residuals p and q
+  # L1 and L2 projection residuals
   p <- numeric(n)
   q <- numeric(n)
   

@@ -26,14 +26,13 @@ coord_to_pxy_weights <- function(X, s, weights, contkernel = "gaussian",
   }
   
   if (use_parallel) {
-    # Use provided cluster or create new one
     if (is.null(cluster)) {
       cl <- parallel::makeCluster(n_cores)
       parallel::clusterEvalQ(cl, library(np))
       created_cluster <- TRUE
     } else {
       cl <- cluster
-      # Load np on the existing cluster
+      # Load np on existing cluster
       parallel::clusterEvalQ(cl, {
         if (!"np" %in% .packages()) library(np)
       })
@@ -44,7 +43,6 @@ coord_to_pxy_weights <- function(X, s, weights, contkernel = "gaussian",
     
     log_py_x_list <- parallel::parLapply(cl, 1:n_features, compute_feature_pyx)
     
-    # Only stop if we created it
     if (created_cluster) {
       parallel::stopCluster(cl)
     }
