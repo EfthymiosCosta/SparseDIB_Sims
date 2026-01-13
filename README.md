@@ -1,1 +1,1 @@
-# SparseDIB_Sims
+# Sparse DIB Simulations
