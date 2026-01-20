@@ -1,6 +1,6 @@
 # Sparse DIB Simulations
 
-This repository includes the code related to "An information-theoretic algorithm for sparse clustering" by Costa, Papatsouma, and Markos (2026).
+This repository includes the code related to "Sparse clustering via the Deterministic Information Bottleneck algorithm" by Costa, Papatsouma, and Markos (2026).
 
 - `data`: Includes the cleaned version of bladder cancer data set.
 - `data_res`: Includes results on the bladder cancer data set using Sparse DIB with varying sparsity constraint values, COSA/PAM, Sparse K-Means, VarSelLCM, PCA & Sparse PCA followed by K-Means and RPEClust.
